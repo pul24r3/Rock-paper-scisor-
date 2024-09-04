@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice(){
+            let liste=[1,2,3];
+            let indexAleatoir= Math.floor(Math.random() * liste.length);
+            let nombreAleatoir= liste[indexAleatoir];
+            if (nombreAleatoir===1){return "pierre"}
+            else {
+                if (nombreAleatoir===2){return "papier"}
+                else{return "ciseaux"}
+            }
+        }
+        let userscore=0;let consolescore=0;
+        for(let i=1;i<=5;i++){
+            alert("tour numero "+ i);
+            let userinput=prompt("pierre,papier ou ciseaux?");
+        while(userinput!=="pierre" && userinput!="papier" && userinput!=="ciseaux"){
+            userinput=prompt("pierre,papier ou ciseaux?");}
+
+            let ComputerChoice=getComputerChoice();
+            if (userinput === ComputerChoice) {
+        alert(userinput + " vs " + ComputerChoice);
+        alert("Tour nul !");} 
+            else if (userinput === "pierre" && ComputerChoice === "ciseaux" ||
+               userinput === "papier" && ComputerChoice === "pierre" ||
+               userinput === "ciseaux" && ComputerChoice === "papier") {
+        
+        alert(userinput + " vs " + ComputerChoice);
+        alert("L'utilisateur gagne ce tour !");
+        userscore++;}
+             else {
+        alert(userinput + " vs " + ComputerChoice);
+        alert("L'utilisateur perd ce tour.");
+        consolescore++;}
+       /* userinput = prompt("pierre, papier ou ciseaux?");
+        while(userinput !== "pierre" && userinput !== "papier" && userinput !== "ciseaux") {
+        userinput = prompt("pierre, papier ou ciseaux?");}*/
+
+        }
+        alert("user score="+ userscore +" console score="+consolescore)//score finale 
+    </script>
+</body>
+</html>
